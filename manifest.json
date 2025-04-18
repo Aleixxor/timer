@@ -1,5 +1,5 @@
 {
-  "name": "Timer Online",
+  "name": "Timer",
   "short_name": "Timer",
   "start_url": "./index.html",
   "display": "standalone",

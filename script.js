@@ -40,14 +40,12 @@ const initialTime = {
 };
 
 function playFeedback() {
-  // Feedback háptico
   if (navigator.vibrate) {
     navigator.vibrate(200);
   }
 }
 
 function playAlarm() {
-  // Reproduz som de alarme e vibração prolongada
   const alarm = document.getElementById("alarmSound");
   sendNotification();
   if (alarm) {
@@ -136,40 +134,37 @@ document.getElementById("pauseButton").addEventListener("click", pauseTimer);
 document.getElementById("stopButton").addEventListener("click", () => resetTimer(false));
 document.getElementById("resetButton").addEventListener("click", () => resetTimer(true));
 
-// Registro do Service Worker para PWA
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js')
       .then(registration => {
-        console.log('Service Worker registrado com sucesso no escopo:', registration.scope);
+        console.log('Service Worker successfully registered with scope:', registration.scope);
       })
       .catch(error => {
-        console.error('Falha no registro do Service Worker:', error);
+        console.error('Service Worker registration failed:', error);
       });
   });
 }
-// Verifica se o navegador suporta notificações
+
 if ('Notification' in window) {
-  // Solicita permissão para enviar notificações
   Notification.requestPermission().then(permission => {
     if (permission === 'granted') {
-      console.log('Permissão para notificações concedida.');
+      console.log('Permission for notifications granted.');
     } else if (permission === 'denied') {
-      console.log('Permissão para notificações negada.');
+      console.log('Permission for notifications denied.');
     } else {
-      console.log('Permissão para notificações ignorada.');
+      console.log('Permission for notifications ignored.');
     }
   });
 }
-// Função para enviar uma notificação
+
 function sendNotification() {
   if (Notification.permission === 'granted') {
-    const notification = new Notification('Alarme!', {
-      body: 'Seu tempo acabou!',
-      icon: 'icon.svg' // Substitua pelo caminho do seu ícone
+    const notification = new Notification('Alarm!', {
+      body: 'Your time is up!',
+      icon: 'icon.svg'
     });
   } else {
-    console.log('Permissão para notificações não concedida.');
+    console.log('Notification permission not granted.');
   }
 }
-// Chama a função de notificação quando o tempo acabar
