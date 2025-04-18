@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <title>Timer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="A simple and functional online timer for counting down hours, minutes, and seconds." />
+  <meta name="author" content="Your Name Here" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icon.svg" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Online Timer" />
+  <meta property="og:description" content="Set and start a timer with hours, minutes, and seconds easily." />
+  <meta property="og:image" content="icon.svg" />
+  <meta property="og:url" content="https://yourwebsite.com/timer" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Online Timer" />
+  <meta name="twitter:description" content="Set and start a timer with hours, minutes, and seconds easily." />
+  <meta name="twitter:image" content="icon.svg" />
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="display" id="display">
+      <input type="text" id="hours" class="time-input" value="00" />
+      :
+      <input type="text" id="minutes" class="time-input" value="00" />
+      :
+      <input type="text" id="seconds" class="time-input" value="00" focus />
+    </div>
+    <div class="controls">
+      <button class="button" id="resetButton" type="button">
+        <ion-icon name="refresh-circle-outline"></ion-icon>
+      </button>
+      <button class="button" id="stopButton" type="button">
+        <ion-icon name="stop-circle-outline"></ion-icon>
+      </button>
+      <button class="button" id="pauseButton" type="button" style="display: none;">
+        <ion-icon name="pause-circle-outline"></ion-icon>
+      </button>
+      <button class="button" id="startButton" type="button">
+        <ion-icon name="play-circle-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="controls">
+      <a class="link" href="https://www.linkedin.com/in/alex-louzada/">
+        <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+      </a>
+    </div>
+  </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
